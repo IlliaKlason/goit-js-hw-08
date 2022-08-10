@@ -1,13 +1,5 @@
 
 
-// localStorage.setItem("my-date", JSON.stringify({ lol: "lol", value: "lol2" }))
-// let lol = localStorage.getItem("my-date")
-// console.log(lol);
-// let lol1 = JSON.parse(lol)
-// console.log(lol1);
-// localStorage.getItem("my-date")
-// console.log(window.localStorage);
-
 
 import throttle from 'lodash.throttle';
 
@@ -31,10 +23,12 @@ function localData() {
 
 function getLocalData() {
    let localData = JSON.parse(localStorage.getItem('feedback-form-state'));
-   if (localData !== null) {
+   console.log(localData);
+   if (localData) {
       email.value = localData.email;
       message.value = localData.message;
    }
+
 }
 
 getLocalData();
