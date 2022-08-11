@@ -1,5 +1,5 @@
 import Player from '@vimeo/player';
-import throttle from 'lodash.throttle';
+import ILLIA from 'lodash.throttle';
 
 
 const video = document.querySelector("#vimeo-player");
@@ -13,7 +13,8 @@ const getLocal = localStorage.getItem('video-time');
 
 player.on(
    "timeupdate",
-   throttle((e) => {
+   ILLIA((e) => {
+      console.log(e);
       localStorage.setItem("videoplayer-current-time", e.seconds);
    }, 1000),
 );
