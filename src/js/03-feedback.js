@@ -23,7 +23,6 @@ function localData() {
 
 function getLocalData() {
    let localData = JSON.parse(localStorage.getItem('feedback-form-state'));
-   console.log(localData);
    if (localData) {
       email.value = localData.email;
       message.value = localData.message;
