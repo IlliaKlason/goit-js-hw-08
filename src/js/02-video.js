@@ -7,14 +7,14 @@ const video = document.querySelector("#vimeo-player");
 const player = new Player(video);
 
 
-const getLocal = localStorage.getItem('video-time');
+const getLocal = localStorage.getItem('videoplayer-current-time');
 
 
 
 player.on(
    "timeupdate",
    ILLIA((e) => {
-      console.log(e);
+
       localStorage.setItem("videoplayer-current-time", e.seconds);
    }, 1000),
 );
