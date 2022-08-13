@@ -20,7 +20,7 @@ player.on(
 );
 
 getLocal && player.setCurrentTime(getLocal).then(() => {
-   localStorage.removeItem('"videoplayer-current-time"')
+   localStorage.removeItem("videoplayer-current-time")
 }).catch(function (error) {
    console.error(error)
 });
