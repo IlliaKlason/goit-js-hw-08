@@ -7,7 +7,7 @@ const message = document.querySelector('[name="message"]');
 
 
 let formData = {}
-
+feedbackFormState.addEventListener('input', throttle(localData, 500));
 function localData() {
    formData = {
       email: email.value,
@@ -15,7 +15,6 @@ function localData() {
    };
    localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 }
-
 
 function getLocalData() {
    let localData = JSON.parse(localStorage.getItem('feedback-form-state'));
@@ -26,7 +25,6 @@ function getLocalData() {
    formData = localData
 }
 getLocalData();
-
 
 feedbackFormState.addEventListener('submit', submitData);
 function submitData(e) {
