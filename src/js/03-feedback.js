@@ -7,6 +7,7 @@ const message = document.querySelector('[name="message"]');
 
 
 let formData = {}
+
 function localData() {
    formData = {
       email: email.value,
@@ -14,7 +15,7 @@ function localData() {
    };
    localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 }
-feedbackFormState.addEventListener('input', throttle(localData, 500));
+
 
 function getLocalData() {
    let localData = JSON.parse(localStorage.getItem('feedback-form-state'));
@@ -26,6 +27,8 @@ function getLocalData() {
 }
 getLocalData();
 
+
+feedbackFormState.addEventListener('submit', submitData);
 function submitData(e) {
    e.preventDefault();
    if (email.value.trim() !== '' && message.value.trim() !== '') {
@@ -35,4 +38,3 @@ function submitData(e) {
    }
    // this.reset();
 }
-feedbackFormState.addEventListener('submit', submitData);
